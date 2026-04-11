@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lincoln EPS | Engenharia de Alta Performance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-hero { 
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+            url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1920'); 
+            background-size: cover; background-position: center; 
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-black text-blue-700 tracking-tighter">LINCOLN<span class="text-slate-400 font-light ml-1 italic">EPS</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 font-semibold text-xs uppercase tracking-widest">
+                    <a href="#inicio" class="hover:text-blue-700 transition">Início</a>
+                    <a href="#custos" class="hover:text-blue-700 transition">Viabilidade</a>
+                    <a href="#diretrizes" class="hover:text-blue-700 transition">Diretrizes</a>
+                    <a href="#tecnologia" class="hover:text-blue-700 transition">Tecnologia</a>
+                    <a href="#contato" class="bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition shadow-lg shadow-blue-200">Orçamento Consultivo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="h-screen flex items-center justify-center bg-hero text-white text-center px-6">
+        <div class="max-w-4xl">
+            <span class="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block border border-blue-500/30">Construção 4.0</span>
+            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight">O fim da obra lenta e cara.</h1>
+            <p class="text-xl md:text-2xl mb-10 text-slate-300 font-light">Casas de alto padrão com tecnologia monolítica em EPS. Conforto térmico absoluto e entrega em tempo recorde.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contato" class="bg-blue-700 hover:bg-blue-800 text-white px-10 py-5 rounded-xl text-lg font-bold transition-all shadow-xl">Solicitar Estudo de Viabilidade</a>
+                <a href="#custos" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-10 py-5 rounded-xl text-lg font-bold transition-all border border-white/30">Ver Comparativo de Custos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="custos" class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Viabilidade Financeira</h2>
+            <p class="text-slate-500 mb-16 text-lg font-light">Abaixo, apresentamos a realidade métrica entre o sistema convencional e a eficiência do EPS.</p>
+            
+            <div class="overflow-x-auto rounded-3xl shadow-2xl shadow-blue-100 border border-slate-100">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-900 text-white text-xs uppercase tracking-[0.2em]">
+                            <th class="p-6">Indicador de Performance</th>
+                            <th class="p-6">Alvenaria Tradicional</th>
+                            <th class="p-6 bg-blue-700">Sistema EPS</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b">
+                            <td class="p-6 font-bold">Cronograma de Entrega</td>
+                            <td class="p-6">10 a 14 meses</td>
+                            <td class="p-6 text-blue-700 font-black">4 a 6 meses</td>
+                        </tr>
+                        <tr class="border-b bg-slate-50">
+                            <td class="p-6 font-bold">Desperdício de Material</td>
+                            <td class="p-6">Média de 20% a 25%</td>
+                            <td class="p-6 text-blue-700 font-black">Inferior a 2%</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-6 font-bold">Mão de Obra (Eficiência)</td>
+                            <td class="p-6 text-red-500">Alto custo e tempo</td>
+                            <td class="p-6 text-blue-700 font-black">Redução de até 50%</td>
+                        </tr>
+                        <tr class="bg-blue-50/50 font-bold">
+                            <td class="p-6">Isolamento Térmico</td>
+                            <td class="p-6 text-slate-400 italic font-normal">Necessita climatização constante</td>
+                            <td class="p-6 text-blue-800">Economia de 40% na conta de luz</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-[10px] text-slate-400 mt-6 uppercase font-bold">*Base de dados: Médias regionais Paragominas e Região (2026).</p>
+        </div>
+    </section>
+
+    <section id="diretrizes" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Cultura e Compromisso</h2>
+                <p class="text-slate-500 text-lg font-light">Nossos pilares fundamentais como parceiros da sua obra.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Missão</h3>
+                    <p class="text-slate-500 leading-relaxed font-light">Transformar a construção civil através da tecnologia monolítica, entregando residências de alto padrão que unem eficiência térmica e sustentabilidade real.</p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Visão</h3>
+                    <p class="text-slate-500 leading-relaxed font-light">Ser a principal referência em engenharia de sistemas em EPS no Pará até 2028, liderando a transição para métodos construtivos inteligentes.</p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Valores</h3>
+                    <ul class="text-slate-500 text-sm space-y-2 font-light">
+                        <li>• Precisão Técnica e Rigor Matemático</li>
+                        <li>• Transparência e Honestidade Executiva</li>
+                        <li>• Sustentabilidade e Zero Desperdício</li>
+                        <li>• Inovação Disruptiva Constante</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologia" class="py-24 bg-slate-900 text-white px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-black mb-8">Por que EPS não é "isopor comum"?</h2>
+                <div class="space-y-8">
+                    <div class="flex gap-4">
+                        <div class="bg-blue-700 h-10 w-10 shrink-0 rounded-lg flex items-center justify-center font-black">A</div>
+                        <div>
+                            <h4 class="text-xl font-bold">Núcleo de Alta Densidade</h4>
+                            <p class="text-slate-400">Poliestireno expandido autoextinguível (não propaga fogo) que atua como barreira térmica total.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="bg-blue-700 h-10 w-10 shrink-0 rounded-lg flex items-center justify-center font-black">B</div>
+                        <div>
+                            <h4 class="text-xl font-bold">Malha de Aço Estrutural</h4>
+                            <p class="text-slate-400">Toda a casa é envolta em aço eletrossoldado, criando uma estrutura monolítica indestrutível.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="bg-blue-700 h-10 w-10 shrink-0 rounded-lg flex items-center justify-center font-black">C</div>
+                        <div>
+                            <h4 class="text-xl font-bold">Microconcreto Projetado</h4>
+                            <p class="text-slate-400">O acabamento final é feito com concreto de alta resistência, superior à rigidez do tijolo cerâmico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-2xl border-8 border-slate-800">
+                <img src="https://images.unsplash.com/photo-1590644365607-1c5a519a7a37?auto=format&fit=crop&q=80&w=800" class="w-full hover:scale-105 transition duration-700" alt="Tecnologia Monolítica">
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-24 px-6 bg-blue-700">
+        <div class="max-w-4xl mx-auto bg-white rounded-[3rem] p-12 text-center shadow-2xl relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-4xl font-black text-slate-900 mb-6">Pronto para o próximo nível?</h2>
+                <p class="text-lg text-slate-600 mb-10">Agende uma reunião estratégica para o seu projeto.</p>
+                
+                <a href="https://wa.me/55991985574096?text=Olá! Vim pelo site e desejo um orçamento executivo para obra em EPS." 
+                   target="_blank"
+                   class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-12 py-6 rounded-2xl text-2xl font-bold transition-all transform hover:-translate-y-1 shadow-2xl">
+                    <i class="fa-brands fa-whatsapp mr-4 text-3xl"></i>
+                    Falar com Especialista
+                </a>
+                
+                <p class="mt-8 text-xs font-bold text-slate-400 uppercase tracking-widest italic">Paragominas • Região</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white text-center text-slate-400 text-xs font-bold uppercase tracking-widest">
+        <p>&copy; 2026 LINCOLN EPS - ENGENHARIA E INOVAÇÃO</p>
+    </footer>
+
+</body>
+</html>
