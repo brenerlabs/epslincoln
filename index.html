@@ -36,11 +36,6 @@
             100% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0); }
         }
 
-        details summary::-webkit-details-marker { display: none; }
-        details summary { list-style: none; }
-        details[open] summary i { transform: rotate(45deg); font-weight: 300; }
-        
-        /* Ajuste para garantir que o menu mobile não quebre */
         #mobile-menu {
             transition: all 0.3s ease-in-out;
             max-height: 0;
@@ -49,6 +44,10 @@
         #mobile-menu.active {
             max-height: 400px;
         }
+
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
+        details[open] summary i { transform: rotate(45deg); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans overflow-x-hidden">
@@ -62,14 +61,14 @@
                 
                 <div class="hidden lg:flex items-center space-x-2 xl:space-x-4 font-semibold text-xs uppercase tracking-widest text-slate-600">
                     <a href="#inicio" class="nav-link">Início</a>
+                    <a href="#tecnologia" class="nav-link">Tecnologia</a>
                     <a href="#calculadora" class="nav-link">Eficiência</a>
-                    <a href="#diretrizes" class="nav-link">Diretrizes</a>
+                    <a href="#diretrizes" class="nav-link">Sobre</a>
                     <a href="#faq" class="nav-link">FAQ</a>
                     <a href="#contato" class="bg-blue-700 text-white px-5 py-3 rounded-full hover:bg-blue-800 transition shadow-lg shadow-blue-200 ml-4">Orçamento</a>
                 </div>
 
                 <div class="lg:hidden flex items-center gap-4">
-                    <a href="#contato" class="bg-blue-700 text-white px-3 py-2 rounded-lg text-[10px] font-bold uppercase tracking-wider">Orçamento</a>
                     <button onclick="toggleMenu()" class="text-slate-600 text-2xl focus:outline-none">
                         <i class="fa-solid fa-bars-staggered" id="menu-icon"></i>
                     </button>
@@ -78,22 +77,64 @@
         </div>
         
         <div id="mobile-menu" class="lg:hidden bg-white border-b border-slate-100 px-6">
-            <div class="flex flex-col py-4 space-y-4 font-bold text-sm uppercase tracking-widest text-slate-600">
+            <div class="flex flex-col py-4 space-y-4 font-bold text-xs uppercase tracking-widest text-slate-600">
                 <a href="#inicio" onclick="toggleMenu()" class="py-2">Início</a>
+                <a href="#tecnologia" onclick="toggleMenu()" class="py-2 border-t border-slate-50">Tecnologia</a>
                 <a href="#calculadora" onclick="toggleMenu()" class="py-2 border-t border-slate-50">Eficiência</a>
-                <a href="#diretrizes" onclick="toggleMenu()" class="py-2 border-t border-slate-50">Diretrizes</a>
+                <a href="#diretrizes" onclick="toggleMenu()" class="py-2 border-t border-slate-50">Sobre</a>
                 <a href="#faq" onclick="toggleMenu()" class="py-2 border-t border-slate-50">FAQ</a>
+                <a href="#contato" onclick="toggleMenu()" class="py-2 text-blue-700 border-t border-slate-50">Solicitar Orçamento</a>
             </div>
         </div>
     </nav>
 
-    <section id="inicio" class="min-h-screen flex items-center justify-center bg-hero text-white text-center px-4 md:px-6 pt-16">
+    <section id="inicio" class="min-h-screen flex items-center justify-center bg-hero text-white text-center px-4 pt-16">
         <div class="max-w-4xl w-full">
             <span class="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 inline-block border border-blue-500/30">Construção 4.0</span>
-            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">Obra Inteligente.</h1>
-            <p class="text-base sm:text-lg md:text-2xl mb-10 text-slate-300 font-light max-w-2xl mx-auto px-4">Tecnologia monolítica para quem busca eficiência, economia e alto padrão.</p>
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-6 leading-tight uppercase tracking-tighter">Obra Inteligente.</h1>
+            <p class="text-base sm:text-lg md:text-2xl mb-10 text-slate-300 font-light max-w-2xl mx-auto px-4 italic">Tecnologia monolítica para quem busca eficiência, economia e alto padrão.</p>
             <div class="px-6">
-                <a href="#calculadora" class="inline-block w-full sm:w-auto bg-blue-700 hover:bg-blue-800 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl text-base md:text-lg font-bold transition-all shadow-xl hover:-translate-y-1">Simular Viabilidade</a>
+                <a href="#calculadora" class="inline-block w-full sm:w-auto bg-blue-700 hover:bg-blue-800 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl text-base md:text-lg font-bold transition-all shadow-xl hover:-translate-y-1 uppercase tracking-widest">Simular Viabilidade</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologia" class="py-16 md:py-24 px-4 md:px-6 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 space-y-6">
+                    <span class="text-blue-400 font-bold uppercase tracking-[0.3em] text-[10px]">Engenharia de Camadas</span>
+                    <h2 class="text-3xl md:text-5xl font-black leading-tight uppercase tracking-tighter">Por dentro da <br> <span class="text-blue-500">Parede Monolítica</span></h2>
+                    <p class="text-slate-400 font-light text-base md:text-lg leading-relaxed">Diferente da alvenaria comum, nosso sistema funde isolamento e estrutura em uma única peça de alta resistência e durabilidade.</p>
+                    
+                    <div class="space-y-4 pt-4 text-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                            <p><b class="text-white">Núcleo de EPS:</b> Isolamento térmico de alta densidade.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                            <p><b class="text-white">Malhas de Aço:</b> Armadura eletrosoldada para rigidez estrutural.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                            <p><b class="text-white">Microconcreto:</b> Revestimento final de alta compressão.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl group">
+                        <i class="fa-solid fa-temperature-arrow-down text-blue-500 text-3xl mb-4"></i>
+                        <h4 class="font-bold text-white mb-2 uppercase text-sm">Conforto Térmico</h4>
+                        <p class="text-slate-400 text-xs font-light">Redução de até 7°C na temperatura interna.</p>
+                    </div>
+                    <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl group">
+                        <i class="fa-solid fa-volume-xmark text-blue-500 text-3xl mb-4"></i>
+                        <h4 class="font-bold text-white mb-2 uppercase text-sm">Silêncio Absoluto</h4>
+                        <p class="text-slate-400 text-xs font-light">Barreira acústica superior para sua família.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -101,7 +142,7 @@
     <section id="calculadora" class="py-16 md:py-24 px-4 md:px-6 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-10 md:mb-16">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight uppercase">Simulador de Viabilidade</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight uppercase">Simulador de Eficiência</h2>
                 <p class="text-slate-500 font-light italic text-sm md:text-base">Compare o sistema Lincoln EPS com a Alvenaria Convencional.</p>
             </div>
 
@@ -112,33 +153,27 @@
                         <input type="number" id="metragem" placeholder="0" oninput="calcular()" class="w-full text-center text-4xl md:text-5xl font-black bg-transparent border-b-2 border-blue-600 focus:outline-none text-white p-2">
                         <span class="absolute right-0 bottom-2 text-xl md:text-2xl font-light text-slate-500">m²</span>
                     </div>
-                    <p class="mt-8 text-[10px] text-slate-400 text-center leading-relaxed font-light">Cálculos baseados em normas técnicas industriais.</p>
                 </div>
 
                 <div class="lg:col-span-2 overflow-hidden rounded-[2rem] border border-slate-100 shadow-xl overflow-x-auto">
-                    <table class="w-full min-w-[400px] text-left border-collapse bg-white">
+                    <table class="w-full min-w-[400px] text-left bg-white">
                         <thead>
                             <tr class="bg-slate-50 text-slate-400 text-[10px] uppercase tracking-widest font-bold">
-                                <th class="p-4 md:p-6">Indicador</th>
-                                <th class="p-4 md:p-6 text-center">Alvenaria</th>
-                                <th class="p-4 md:p-6 text-center text-blue-700 bg-blue-50/50">Lincoln EPS</th>
+                                <th class="p-6">Indicador</th>
+                                <th class="p-6 text-center">Alvenaria</th>
+                                <th class="p-6 text-center text-blue-700 bg-blue-50/50">Lincoln EPS</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm font-medium">
                             <tr class="border-b border-slate-50">
-                                <td class="p-4 md:p-6 text-slate-500 uppercase text-[10px]">Prazo (Meses)</td>
-                                <td class="p-4 md:p-6 text-center"><span id="tempo-alv">0</span></td>
-                                <td class="p-4 md:p-6 text-center font-black text-blue-700 bg-blue-50/20"><span id="tempo-eps">0</span></td>
+                                <td class="p-6 text-slate-500 uppercase text-[10px]">Prazo (Meses)</td>
+                                <td class="p-6 text-center"><span id="tempo-alv">0</span></td>
+                                <td class="p-6 text-center font-black text-blue-700 bg-blue-50/20"><span id="tempo-eps">0</span></td>
                             </tr>
                             <tr class="border-b border-slate-50">
-                                <td class="p-4 md:p-6 text-slate-500 uppercase text-[10px]">Resíduos</td>
-                                <td class="p-4 md:p-6 text-center text-red-400">Alto</td>
-                                <td class="p-4 md:p-6 text-center font-black text-blue-700 bg-blue-50/20">Zero</td>
-                            </tr>
-                            <tr class="border-b border-slate-50">
-                                <td class="p-4 md:p-6 text-slate-500 uppercase text-[10px]">Econ. Energia</td>
-                                <td class="p-4 md:p-6 text-center italic text-slate-400">Baixa</td>
-                                <td class="p-4 md:p-6 text-center font-black text-green-600 bg-blue-50/20">R$ <span id="eco-energia">0</span>/ano</td>
+                                <td class="p-6 text-slate-500 uppercase text-[10px]">Econ. Energia</td>
+                                <td class="p-6 text-center italic text-slate-400">Baixa</td>
+                                <td class="p-6 text-center font-black text-green-600 bg-blue-50/20">R$ <span id="eco-energia">0</span>/ano</td>
                             </tr>
                         </tbody>
                     </table>
@@ -149,74 +184,70 @@
 
     <section id="diretrizes" class="py-16 md:py-24 px-4 md:px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 hover:-translate-y-2 transition-all duration-300 group text-center">
-                    <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-6 mx-auto group-hover:bg-blue-600 group-hover:text-white transition-all">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 text-center">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-6 mx-auto">
                         <i class="fa-solid fa-crosshairs"></i>
                     </div>
                     <h3 class="text-lg md:text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Missão</h3>
-                    <p class="text-slate-500 text-sm font-light leading-relaxed">Industrializar a construção civil e entregar obras com precisão de engenharia.</p>
+                    <p class="text-slate-500 text-sm font-light">Industrializar a construção civil e entregar obras com precisão de engenharia.</p>
                 </div>
 
-                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 hover:-translate-y-2 transition-all duration-300 group text-center">
-                    <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-6 mx-auto group-hover:bg-blue-600 group-hover:text-white transition-all">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 text-center">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-6 mx-auto">
                         <i class="fa-solid fa-eye"></i>
                     </div>
                     <h3 class="text-lg md:text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Visão</h3>
-                    <p class="text-slate-500 text-sm font-light leading-relaxed">Ser a maior autoridade em sistemas monolíticos do Pará até 2028.</p>
+                    <p class="text-slate-500 text-sm font-light">Ser a maior autoridade em sistemas monolíticos do Pará até 2028.</p>
                 </div>
 
-                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 hover:-translate-y-2 transition-all duration-300 group sm:col-span-2 lg:col-span-1">
-                    <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-6 mx-auto group-hover:bg-blue-600 group-hover:text-white transition-all">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 sm:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-6 mx-auto">
                         <i class="fa-solid fa-hands-holding"></i>
                     </div>
                     <h3 class="text-lg md:text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter text-center">Valores Core</h3>
-                    <div class="grid grid-cols-1 gap-3 mt-4">
-                        <p class="text-slate-500 text-xs font-light"><b class="text-slate-900 font-bold">Rigor Técnico:</b> Projetos sem "achismos".</p>
-                        <p class="text-slate-500 text-xs font-light"><b class="text-slate-900 font-bold">Ética Sustentável:</b> Redução da pegada de carbono.</p>
-                        <p class="text-slate-500 text-xs font-light"><b class="text-slate-900 font-bold">Foco no Cliente:</b> Valor real e redução de custos.</p>
+                    <div class="space-y-2 text-center lg:text-left">
+                        <p class="text-slate-500 text-[10px]"><b class="text-slate-900">Rigor Técnico:</b> Sem "achismos".</p>
+                        <p class="text-slate-500 text-[10px]"><b class="text-slate-900">Sustentabilidade:</b> Menor pegada de carbono.</p>
+                        <p class="text-slate-500 text-[10px]"><b class="text-slate-900">Foco no Cliente:</b> Redução de custos reais.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="py-16 md:py-24 px-4 md:px-6 bg-white border-t border-slate-100">
+    <section id="faq" class="py-16 md:py-24 px-4 md:px-6 bg-white border-t">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-black text-center mb-12 md:mb-16 uppercase tracking-tight text-slate-900">Perguntas Frequentes</h2>
-            <div class="space-y-0">
+            <h2 class="text-3xl font-black text-center mb-12 uppercase tracking-tight">Perguntas Frequentes</h2>
+            <div class="space-y-2">
                 <details class="group border-b border-slate-100 py-6">
-                    <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-800 list-none text-base md:text-lg">
-                        <span class="tracking-tight pr-4">Como fixar móveis em EPS?</span>
-                        <i class="fa-solid fa-plus text-blue-600 text-sm transition-transform duration-300"></i>
+                    <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-800 text-sm md:text-base">
+                        <span>O sistema EPS é resistente ao fogo?</span>
+                        <i class="fa-solid fa-plus text-blue-600 text-xs transition-transform duration-300"></i>
                     </summary>
-                    <div class="pt-6 text-slate-500 text-sm md:text-base font-light leading-relaxed">
-                        A fixação é feita diretamente no microconcreto estrutural utilizando buchas convencionais ou químicas para cargas pesadas.
-                    </div>
+                    <p class="pt-4 text-slate-500 text-xs md:text-sm font-light leading-relaxed">Sim. O núcleo utiliza EPS autoextinguível (Classe F) e revestimento de concreto que oferecem alta resistência.</p>
                 </details>
-                </div>
-        </div>
-    </section>
-
-    <section id="contato" class="py-16 md:py-24 px-4 md:px-6 bg-blue-700">
-        <div class="max-w-4xl mx-auto bg-white rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 text-center shadow-2xl">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Solicite sua Análise</h2>
-            <p class="text-slate-500 mb-10 font-light text-sm md:text-base leading-relaxed">Suporte técnico especializado para sua obra industrializada.</p>
-            <a href="https://wa.me/5591985574096" target="_blank" class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-xl font-bold transition-all shadow-xl w-full sm:w-auto hover:-translate-y-1">
-                <i class="fa-brands fa-whatsapp mr-4 text-2xl md:text-3xl"></i>
-                Falar com Especialista
-            </a>
-            <p class="mt-8 text-[10px] text-slate-400 uppercase tracking-[0.2em]">Atendimento em Paragominas e Região</p>
-        </div>
-    </section>
-
-    <footer class="py-12 bg-white border-t border-slate-100 px-4">
-        <div class="max-w-7xl mx-auto text-center">
-            <div class="text-xl md:text-2xl font-black text-blue-700 tracking-tighter mb-4 uppercase">LINCOLN<span class="text-slate-400 font-light ml-1 italic capitalize">EPS</span></div>
-            <div class="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] space-y-2">
-                <p>&copy; 2026 LINCOLN EPS - Engenharia</p>
-                <p class="font-light text-slate-300 italic uppercase tracking-widest">Tecnologia Monolítica Sustentável</p>
             </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-16 px-4 bg-blue-700">
+        <div class="max-w-4xl mx-auto bg-white rounded-[2rem] p-8 md:p-16 text-center shadow-2xl">
+            <h2 class="text-3xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Fale com os Especialistas</h2>
+            <p class="text-slate-500 mb-10 font-light text-sm italic">Lincoln, Jessica e Ozanan: Suporte técnico especializado para sua obra.</p>
+            <a href="https://wa.me/5591985574096" target="_blank" class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 md:py-6 rounded-2xl text-lg md:text-xl font-bold transition-all w-full sm:w-auto shadow-xl">
+                <i class="fa-brands fa-whatsapp mr-4 text-2xl md:text-3xl"></i>
+                Consultar Engenharia
+            </a>
+            <p class="mt-8 text-[9px] text-slate-400 uppercase tracking-widest">Atendimento em Paragominas e Região</p>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t border-slate-100 px-4 text-center">
+        <div class="text-xl font-black text-blue-700 tracking-tighter mb-4 uppercase">LINCOLN<span class="text-slate-400 font-light ml-1 italic capitalize">EPS</span></div>
+        <div class="text-[9px] text-slate-400 font-bold uppercase tracking-widest space-y-1">
+            <p>&copy; 2026 LINCOLN EPS - Engenharia</p>
+            <p class="font-light italic">Sistemas Monolíticos Inteligentes</p>
         </div>
     </footer>
 
@@ -225,30 +256,20 @@
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
             menu.classList.toggle('active');
-            
-            if(menu.classList.contains('active')) {
-                icon.classList.remove('fa-bars-staggered');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars-staggered');
-            }
+            icon.classList.toggle('fa-bars-staggered');
+            icon.classList.toggle('fa-xmark');
         }
 
         function calcular() {
             const m2 = document.getElementById('metragem').value;
-            const tempoAlv = document.getElementById('tempo-alv');
-            const tempoEps = document.getElementById('tempo-eps');
-            const ecoEnergia = document.getElementById('eco-energia');
-
             if(m2 > 0) {
-                tempoAlv.innerText = Math.ceil(m2 / 15); 
-                tempoEps.innerText = Math.ceil(m2 / 45); 
-                ecoEnergia.innerText = (m2 * 21.60).toLocaleString('pt-BR', {maximumFractionDigits: 0});
+                document.getElementById('tempo-alv').innerText = Math.ceil(m2 / 15); 
+                document.getElementById('tempo-eps').innerText = Math.ceil(m2 / 45); 
+                document.getElementById('eco-energia').innerText = (m2 * 21.60).toLocaleString('pt-BR', {maximumFractionDigits: 0});
             } else {
-                tempoAlv.innerText = "0";
-                tempoEps.innerText = "0";
-                ecoEnergia.innerText = "0";
+                document.getElementById('tempo-alv').innerText = "0";
+                document.getElementById('tempo-eps').innerText = "0";
+                document.getElementById('eco-energia').innerText = "0";
             }
         }
     </script>
