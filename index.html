@@ -3,274 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lincoln EPS | Engenharia de Alta Performance</title>
+    <title>VHF Serviços | Engenharia Monolítica em EPS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
     <style>
+        body { font-family: 'Montserrat', sans-serif; }
         html { scroll-behavior: smooth; }
+        
         .bg-hero { 
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), 
             url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1920'); 
             background-size: cover; background-position: center; 
         }
 
-        .nav-link {
-            position: relative;
+        .wpp-float {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; left: 40px;
+            background-color: #25d366; color: #FFF; border-radius: 50px;
+            text-align: center; font-size: 30px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); z-index: 100;
+            display: flex; align-items: center; justify-content: center;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
-            padding: 8px 12px;
-            border-radius: 8px;
-        }
-        
-        @media (min-width: 1024px) {
-            .nav-link:hover {
-                color: #1d4ed8; 
-                border-color: #1d4ed8;
-                animation: pulse-border 0.6s linear;
-            }
         }
 
-        @keyframes pulse-border {
-            0% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(29, 78, 216, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0); }
-        }
+        /* Micro-interações de Benefícios */
+        .benefit-card .hover-info { opacity: 0; transform: translateY(10px); transition: all 0.3s ease; }
+        .benefit-card:hover .hover-info { opacity: 1; transform: translateY(0); }
+        .benefit-card:hover i { transform: scale(1.1); color: #1d4ed8; }
 
-        #mobile-menu {
-            transition: all 0.3s ease-in-out;
-            max-height: 0;
-            overflow: hidden;
-        }
-        #mobile-menu.active {
-            max-height: 400px;
-        }
-
-        details summary::-webkit-details-marker { display: none; }
-        details summary { list-style: none; }
-        details[open] summary i { transform: rotate(45deg); }
+        .progress-bar { transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .winner-border { border: 4px solid #1d4ed8 !important; transform: scale(1.02); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans overflow-x-hidden">
+<body class="bg-white text-slate-900 overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 md:px-6">
-            <div class="flex justify-between h-16 md:h-20 items-center">
-                <div class="flex items-center">
-                    <span class="text-xl md:text-2xl font-black text-blue-700 tracking-tighter uppercase">LINCOLN<span class="text-slate-400 font-light ml-1 italic capitalize">EPS</span></span>
-                </div>
-                
-                <div class="hidden lg:flex items-center space-x-2 xl:space-x-4 font-semibold text-xs uppercase tracking-widest text-slate-600">
-                    <a href="#inicio" class="nav-link">Início</a>
-                    <a href="#tecnologia" class="nav-link">Tecnologia</a>
-                    <a href="#calculadora" class="nav-link">Eficiência</a>
-                    <a href="#diretrizes" class="nav-link">Sobre</a>
-                    <a href="#faq" class="nav-link">FAQ</a>
-                    <a href="#contato" class="bg-blue-700 text-white px-5 py-3 rounded-full hover:bg-blue-800 transition shadow-lg shadow-blue-200 ml-4">Orçamento</a>
-                </div>
+    <a href="https://wa.me/5591985574096" class="wpp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-                <div class="lg:hidden flex items-center gap-4">
-                    <button onclick="toggleMenu()" class="text-slate-600 text-2xl focus:outline-none">
-                        <i class="fa-solid fa-bars-staggered" id="menu-icon"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <div id="mobile-menu" class="lg:hidden bg-white border-b border-slate-100 px-6">
-            <div class="flex flex-col py-4 space-y-4 font-bold text-xs uppercase tracking-widest text-slate-600">
-                <a href="#inicio" onclick="toggleMenu()" class="py-2">Início</a>
-                <a href="#tecnologia" onclick="toggleMenu()" class="py-2 border-t border-slate-50">Tecnologia</a>
-                <a href="#calculadora" onclick="toggleMenu()" class="py-2 border-t border-slate-50">Eficiência</a>
-                <a href="#diretrizes" onclick="toggleMenu()" class="py-2 border-t border-slate-50">Sobre</a>
-                <a href="#faq" onclick="toggleMenu()" class="py-2 border-t border-slate-50">FAQ</a>
-                <a href="#contato" onclick="toggleMenu()" class="py-2 text-blue-700 border-t border-slate-50">Solicitar Orçamento</a>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="text-2xl font-black tracking-tighter text-slate-900 uppercase">VHF<span class="text-blue-700 font-light italic">Serviços</span></span>
+            <div class="hidden md:flex gap-8 text-[10px] uppercase font-bold tracking-[0.2em] text-slate-500">
+                <a href="#beneficios" class="hover:text-blue-700">Vantagens</a>
+                <a href="#cronograma" class="hover:text-blue-700">7 Dias</a>
+                <a href="#etapas" class="hover:text-blue-700">Jornada</a>
+                <a href="#indicador" class="hover:text-blue-700">Perfil</a>
             </div>
         </div>
     </nav>
 
-    <section id="inicio" class="min-h-screen flex items-center justify-center bg-hero text-white text-center px-4 pt-16">
-        <div class="max-w-4xl w-full">
-            <span class="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 inline-block border border-blue-500/30">Construção 4.0</span>
-            <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-6 leading-tight uppercase tracking-tighter">Obra Inteligente.</h1>
-            <p class="text-base sm:text-lg md:text-2xl mb-10 text-slate-300 font-light max-w-2xl mx-auto px-4 italic">Tecnologia monolítica para quem busca eficiência, economia e alto padrão.</p>
-            <div class="px-6">
-                <a href="#calculadora" class="inline-block w-full sm:w-auto bg-blue-700 hover:bg-blue-800 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl text-base md:text-lg font-bold transition-all shadow-xl hover:-translate-y-1 uppercase tracking-widest">Simular Viabilidade</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="tecnologia" class="py-16 md:py-24 px-4 md:px-6 bg-slate-900 text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2 space-y-6">
-                    <span class="text-blue-400 font-bold uppercase tracking-[0.3em] text-[10px]">Engenharia de Camadas</span>
-                    <h2 class="text-3xl md:text-5xl font-black leading-tight uppercase tracking-tighter">Por dentro da <br> <span class="text-blue-500">Parede Monolítica</span></h2>
-                    <p class="text-slate-400 font-light text-base md:text-lg leading-relaxed">Diferente da alvenaria comum, nosso sistema funde isolamento e estrutura em uma única peça de alta resistência e durabilidade.</p>
-                    
-                    <div class="space-y-4 pt-4 text-sm">
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
-                            <p><b class="text-white">Núcleo de EPS:</b> Isolamento térmico de alta densidade.</p>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
-                            <p><b class="text-white">Malhas de Aço:</b> Armadura eletrosoldada para rigidez estrutural.</p>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
-                            <p><b class="text-white">Microconcreto:</b> Revestimento final de alta compressão.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl group">
-                        <i class="fa-solid fa-temperature-arrow-down text-blue-500 text-3xl mb-4"></i>
-                        <h4 class="font-bold text-white mb-2 uppercase text-sm">Conforto Térmico</h4>
-                        <p class="text-slate-400 text-xs font-light">Redução de até 7°C na temperatura interna.</p>
-                    </div>
-                    <div class="bg-slate-800/50 border border-slate-700 p-6 rounded-2xl group">
-                        <i class="fa-solid fa-volume-xmark text-blue-500 text-3xl mb-4"></i>
-                        <h4 class="font-bold text-white mb-2 uppercase text-sm">Silêncio Absoluto</h4>
-                        <p class="text-slate-400 text-xs font-light">Barreira acústica superior para sua família.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="calculadora" class="py-16 md:py-24 px-4 md:px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-10 md:mb-16">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight uppercase">Simulador de Eficiência</h2>
-                <p class="text-slate-500 font-light italic text-sm md:text-base">Compare o sistema Lincoln EPS com a Alvenaria Convencional.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-6 md:gap-8 items-start">
-                <div class="bg-slate-900 text-white p-8 md:p-10 rounded-[2rem] shadow-2xl">
-                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-6 text-center">Área Total da Obra</label>
-                    <div class="relative">
-                        <input type="number" id="metragem" placeholder="0" oninput="calcular()" class="w-full text-center text-4xl md:text-5xl font-black bg-transparent border-b-2 border-blue-600 focus:outline-none text-white p-2">
-                        <span class="absolute right-0 bottom-2 text-xl md:text-2xl font-light text-slate-500">m²</span>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-2 overflow-hidden rounded-[2rem] border border-slate-100 shadow-xl overflow-x-auto">
-                    <table class="w-full min-w-[400px] text-left bg-white">
-                        <thead>
-                            <tr class="bg-slate-50 text-slate-400 text-[10px] uppercase tracking-widest font-bold">
-                                <th class="p-6">Indicador</th>
-                                <th class="p-6 text-center">Alvenaria</th>
-                                <th class="p-6 text-center text-blue-700 bg-blue-50/50">Lincoln EPS</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm font-medium">
-                            <tr class="border-b border-slate-50">
-                                <td class="p-6 text-slate-500 uppercase text-[10px]">Prazo (Meses)</td>
-                                <td class="p-6 text-center"><span id="tempo-alv">0</span></td>
-                                <td class="p-6 text-center font-black text-blue-700 bg-blue-50/20"><span id="tempo-eps">0</span></td>
-                            </tr>
-                            <tr class="border-b border-slate-50">
-                                <td class="p-6 text-slate-500 uppercase text-[10px]">Econ. Energia</td>
-                                <td class="p-6 text-center italic text-slate-400">Baixa</td>
-                                <td class="p-6 text-center font-black text-green-600 bg-blue-50/20">R$ <span id="eco-energia">0</span>/ano</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="diretrizes" class="py-16 md:py-24 px-4 md:px-6 bg-slate-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 text-center">
-                    <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-6 mx-auto">
-                        <i class="fa-solid fa-crosshairs"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Missão</h3>
-                    <p class="text-slate-500 text-sm font-light">Industrializar a construção civil e entregar obras com precisão de engenharia.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 text-center">
-                    <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-6 mx-auto">
-                        <i class="fa-solid fa-eye"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Visão</h3>
-                    <p class="text-slate-500 text-sm font-light">Ser a maior autoridade em sistemas monolíticos do Pará até 2028.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 sm:col-span-2 lg:col-span-1">
-                    <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl md:text-2xl mb-6 mx-auto">
-                        <i class="fa-solid fa-hands-holding"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-black text-slate-900 mb-4 uppercase tracking-tighter text-center">Valores Core</h3>
-                    <div class="space-y-2 text-center lg:text-left">
-                        <p class="text-slate-500 text-[10px]"><b class="text-slate-900">Rigor Técnico:</b> Sem "achismos".</p>
-                        <p class="text-slate-500 text-[10px]"><b class="text-slate-900">Sustentabilidade:</b> Menor pegada de carbono.</p>
-                        <p class="text-slate-500 text-[10px]"><b class="text-slate-900">Foco no Cliente:</b> Redução de custos reais.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-16 md:py-24 px-4 md:px-6 bg-white border-t">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-black text-center mb-12 uppercase tracking-tight">Perguntas Frequentes</h2>
-            <div class="space-y-2">
-                <details class="group border-b border-slate-100 py-6">
-                    <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-800 text-sm md:text-base">
-                        <span>O sistema EPS é resistente ao fogo?</span>
-                        <i class="fa-solid fa-plus text-blue-600 text-xs transition-transform duration-300"></i>
-                    </summary>
-                    <p class="pt-4 text-slate-500 text-xs md:text-sm font-light leading-relaxed">Sim. O núcleo utiliza EPS autoextinguível (Classe F) e revestimento de concreto que oferecem alta resistência.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="py-16 px-4 bg-blue-700">
-        <div class="max-w-4xl mx-auto bg-white rounded-[2rem] p-8 md:p-16 text-center shadow-2xl">
-            <h2 class="text-3xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Fale com os Especialistas</h2>
-            <p class="text-slate-500 mb-10 font-light text-sm italic">Lincoln, Jessica e Ozanan: Suporte técnico especializado para sua obra.</p>
-            <a href="https://wa.me/5591985574096" target="_blank" class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 md:py-6 rounded-2xl text-lg md:text-xl font-bold transition-all w-full sm:w-auto shadow-xl">
-                <i class="fa-brands fa-whatsapp mr-4 text-2xl md:text-3xl"></i>
-                Consultar Engenharia
+    <section id="eps-foco" class="min-h-screen flex items-center justify-center bg-hero px-6 pt-20 text-center">
+        <div class="max-w-5xl mx-auto text-white">
+            <span class="bg-blue-700/20 text-blue-400 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block border border-blue-700/30">Paragominas e Região</span>
+            <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8 uppercase italic">Construção <br><span class="text-blue-500">Inteligente em EPS</span></h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-300 font-light leading-relaxed mb-10 italic">
+                "VHF Serviços: Transformamos tecnologia em alicerces, entregando o futuro da engenharia hoje."
+            </p>
+            <a href="https://wa.me/5591985574096" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-all shadow-xl">
+                Quero economizar tempo na minha obra
             </a>
-            <p class="mt-8 text-[9px] text-slate-400 uppercase tracking-widest">Atendimento em Paragominas e Região</p>
         </div>
     </section>
 
-    <footer class="py-12 bg-white border-t border-slate-100 px-4 text-center">
-        <div class="text-xl font-black text-blue-700 tracking-tighter mb-4 uppercase">LINCOLN<span class="text-slate-400 font-light ml-1 italic capitalize">EPS</span></div>
-        <div class="text-[9px] text-slate-400 font-bold uppercase tracking-widest space-y-1">
-            <p>&copy; 2026 LINCOLN EPS - Engenharia</p>
-            <p class="font-light italic">Sistemas Monolíticos Inteligentes</p>
+    <section id="beneficios" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black uppercase tracking-tighter italic">Engenharia de <span class="text-blue-700">Performance</span></h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="benefit-card p-8 bg-slate-50 rounded-3xl border border-slate-100 transition-all cursor-default overflow-hidden relative group">
+                    <i class="fa-solid fa-leaf text-blue-700 text-3xl mb-4 transition-transform"></i>
+                    <h4 class="font-bold text-xs uppercase mb-3 italic">Sustentabilidade</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed group-hover:opacity-0 transition-opacity">Redução de até 95% na geração de entulho.</p>
+                    <div class="hover-info absolute inset-0 p-8 flex items-center bg-blue-700 text-white text-[11px] font-bold uppercase italic">
+                        Construção limpa: Sem desperdício de água e quebra-quebra de tijolos.
+                    </div>
+                </div>
+                <div class="benefit-card p-8 bg-slate-50 rounded-3xl border border-slate-100 transition-all cursor-default overflow-hidden relative group">
+                    <i class="fa-solid fa-temperature-arrow-down text-blue-700 text-3xl mb-4 transition-transform"></i>
+                    <h4 class="font-bold text-xs uppercase mb-3 italic">Conforto Térmico</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed group-hover:opacity-0 transition-opacity">Ambientes equilibrados o ano todo.</p>
+                    <div class="hover-info absolute inset-0 p-8 flex items-center bg-blue-700 text-white text-[11px] font-bold uppercase italic">
+                        Até 5°C mais fresco que a alvenaria comum.
+                    </div>
+                </div>
+                <div class="benefit-card p-8 bg-slate-50 rounded-3xl border border-slate-100 transition-all cursor-default overflow-hidden relative group">
+                    <i class="fa-solid fa-stopwatch text-blue-700 text-3xl mb-4 transition-transform"></i>
+                    <h4 class="font-bold text-xs uppercase mb-3 italic">Alta Velocidade</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed group-hover:opacity-0 transition-opacity">40% mais rápido que o convencional.</p>
+                    <div class="hover-info absolute inset-0 p-8 flex items-center bg-blue-700 text-white text-[11px] font-bold uppercase italic">
+                        Menos tempo de canteiro = Menor custo de mão de obra.
+                    </div>
+                </div>
+                <div class="benefit-card p-8 bg-slate-50 rounded-3xl border border-slate-100 transition-all cursor-default overflow-hidden relative group">
+                    <i class="fa-solid fa-shield-halved text-blue-700 text-3xl mb-4 transition-transform"></i>
+                    <h4 class="font-bold text-xs uppercase mb-3 italic">Blindagem Monolítica</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed group-hover:opacity-0 transition-opacity">Segurança contra impactos e ventos.</p>
+                    <div class="hover-info absolute inset-0 p-8 flex items-center bg-blue-700 text-white text-[11px] font-bold uppercase italic">
+                        Núcleo de alta densidade revestido por malhas de aço e microconcreto.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cronograma" class="py-24 bg-slate-900 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-white text-3xl font-black uppercase italic mb-16">Evolução VHF: <span class="text-blue-500">7 Dias em Campo</span></h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="relative text-center">
+                    <div class="w-16 h-16 bg-blue-700 text-white rounded-full flex items-center justify-center font-black mx-auto mb-6 shadow-lg shadow-blue-500/20">01</div>
+                    <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-4">Início</h4>
+                    <p class="text-slate-400 text-xs italic font-light">Terreno limpo e base estrutural pronta para receber a tecnologia.</p>
+                </div>
+                <div class="relative text-center">
+                    <div class="w-16 h-16 bg-blue-700 text-white rounded-full flex items-center justify-center font-black mx-auto mb-6 shadow-lg shadow-blue-500/20">04</div>
+                    <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-4">Montagem</h4>
+                    <p class="text-slate-400 text-xs italic font-light">Painéis de EPS e malhas de aço posicionados. A forma da casa surge.</p>
+                </div>
+                <div class="relative text-center">
+                    <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center font-black mx-auto mb-6 shadow-lg shadow-green-500/20">07</div>
+                    <h4 class="text-white font-bold uppercase text-xs tracking-widest mb-4">Entrega Cinza</h4>
+                    <p class="text-slate-400 text-xs italic font-light">Microconcreto aplicado (chapisco técnico). Estrutura bruta finalizada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-blue-700 px-6">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            <i class="fa-solid fa-dumpster-fire text-6xl text-white/30"></i>
+            <div>
+                <h3 class="text-white font-black uppercase italic text-xl mb-2">Não é "Casa de Isopor", é Bunker Térmico.</h3>
+                <p class="text-blue-100 text-sm font-light leading-relaxed">
+                    Muitos confundem o EPS com fragilidade. Na <strong>VHF Serviços</strong>, utilizamos um núcleo de EPS de alta densidade revestido por malhas de aço eletrosoldadas e microconcreto industrial. O resultado é uma parede monolítica muito mais resistente a impactos e ventos do que o tijolo furado comum.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="etapas" class="py-24 bg-slate-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-3xl font-black uppercase italic mb-16">Jornada de <span class="text-blue-700">Execução</span></h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-slate-100 relative group">
+                    <div class="absolute top-0 right-0 p-8 text-slate-100 text-7xl font-black italic">01</div>
+                    <h3 class="text-2xl font-black uppercase italic text-blue-700 mb-6">Padrão VHF: Até o Cinza</h3>
+                    <p class="text-slate-600 font-light leading-relaxed mb-10 text-sm">Entregamos a inteligência estrutural: fundação, painéis, malhas e chapisco técnico.</p>
+                    <a href="https://wa.me/5591985574096" class="text-[10px] font-black uppercase tracking-widest text-blue-700 border-b-2 border-blue-700 pb-1 hover:text-blue-900 transition-colors">Solicitar orçamento para entrega no Cinza</a>
+                </div>
+                <div class="bg-slate-900 p-10 rounded-[3rem] shadow-xl text-white relative">
+                    <div class="absolute top-0 right-0 p-8 text-white/5 text-7xl font-black italic">02</div>
+                    <h3 class="text-2xl font-black uppercase italic text-blue-500 mb-6">Obra 100% Finalizada</h3>
+                    <p class="text-slate-400 font-light leading-relaxed mb-10 text-sm">Gestão completa e chave na mão, coordenando parceiros terceirizados sob nossa supervisão.</p>
+                    <a href="https://wa.me/5591985574096" class="text-[10px] font-black uppercase tracking-widest text-blue-500 border-b-2 border-blue-500 pb-1 hover:text-blue-300 transition-colors">Quero a chave na mão</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-20 bg-slate-50 rounded-[3rem] overflow-hidden">
+                <div class="flex-1 p-12">
+                    <h2 class="text-4xl font-black uppercase italic tracking-tighter leading-none">Obras <br><span class="text-blue-700">Tecnológicas</span> <br>com EPS</h2>
+                    <p class="text-slate-500 mt-6 font-light uppercase tracking-widest text-[10px]">Execução VHF Serviços em Campo</p>
+                </div>
+                <div class="flex-1 w-full h-[500px]">
+                    <img src="https://i.postimg.cc/MKh4mjCc/PHOTO-2026-04-25-09-44-01.jpg" alt="Obra VHF Serviços" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="indicador" class="py-24 bg-slate-50 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-black uppercase mb-12 tracking-tighter italic">Qual o seu <span class="text-blue-700">Perfil de Obra?</span></h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <button id="btn-cinza" onclick="vote('cinza')" class="p-8 bg-white rounded-[2rem] shadow-sm transition-all text-left border-2 border-transparent">
+                    <h4 class="font-black uppercase italic mb-2">Até o Cinza</h4>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter italic">Quero tecnologia e economia</p>
+                </button>
+                <button id="btn-completa" onclick="vote('completa')" class="p-8 bg-white rounded-[2rem] shadow-sm transition-all text-left border-2 border-transparent">
+                    <h4 class="font-black uppercase italic mb-2">Obra 100%</h4>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter italic">Quero tranquilidade total</p>
+                </button>
+            </div>
+            <div class="bg-slate-200 h-14 rounded-full overflow-hidden relative shadow-inner">
+                <div id="bar-cinza" class="progress-bar absolute left-0 top-0 h-full bg-blue-700 flex items-center justify-center text-[10px] text-white font-bold uppercase tracking-widest" style="width: 50%;">Cinza (<span id="perc-cinza">50</span>%)</div>
+                <div id="bar-completa" class="progress-bar absolute right-0 top-0 h-full bg-slate-800 flex items-center justify-center text-[10px] text-white font-bold uppercase tracking-widest" style="width: 50%;">100% (<span id="perc-completa">50</span>%)</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 bg-slate-900 text-white px-6">
+        <div class="max-w-7xl mx-auto border-b border-white/10 pb-16 flex flex-col md:flex-row justify-between items-center gap-8">
+            <span class="text-3xl font-black uppercase italic">VHF<span class="text-blue-700">Serviços</span></span>
+            <p class="text-slate-500 text-[10px] uppercase font-bold tracking-[0.3em]">Paragominas - PA | +55 (91) 98557-4096</p>
+        </div>
+        <div class="pt-8 text-center text-[9px] text-slate-500 uppercase tracking-widest font-bold">
+            &copy; 2026 VHF Serviços - Rigor Técnico sem Achismos.
         </div>
     </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            menu.classList.toggle('active');
-            icon.classList.toggle('fa-bars-staggered');
-            icon.classList.toggle('fa-xmark');
-        }
-
-        function calcular() {
-            const m2 = document.getElementById('metragem').value;
-            if(m2 > 0) {
-                document.getElementById('tempo-alv').innerText = Math.ceil(m2 / 15); 
-                document.getElementById('tempo-eps').innerText = Math.ceil(m2 / 45); 
-                document.getElementById('eco-energia').innerText = (m2 * 21.60).toLocaleString('pt-BR', {maximumFractionDigits: 0});
-            } else {
-                document.getElementById('tempo-alv').innerText = "0";
-                document.getElementById('tempo-eps').innerText = "0";
-                document.getElementById('eco-energia').innerText = "0";
-            }
+        let votes = { cinza: 10, completa: 10 };
+        function vote(type) {
+            votes[type]++;
+            const total = votes.cinza + votes.completa;
+            const pCinza = Math.round((votes.cinza / total) * 100);
+            const pCompleta = 100 - pCinza;
+            document.getElementById('bar-cinza').style.width = pCinza + '%';
+            document.getElementById('bar-completa').style.width = pCompleta + '%';
+            document.getElementById('perc-cinza').innerText = pCinza;
+            document.getElementById('perc-completa').innerText = pCompleta;
+            const bC = document.getElementById('btn-cinza');
+            const bF = document.getElementById('btn-completa');
+            if(pCinza > pCompleta) { bC.classList.add('winner-border'); bF.classList.remove('winner-border'); }
+            else { bF.classList.add('winner-border'); bC.classList.remove('winner-border'); }
         }
     </script>
 </body>
