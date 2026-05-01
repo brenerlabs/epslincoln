@@ -71,42 +71,49 @@
         </div>
     </nav>
 
-   <!-- HERO: FOCO NO MODELO "ATÉ O CINZA" -->
-    <section id="eps-foco" class="min-h-screen flex items-center justify-center bg-hero px-6 pt-24 pb-12 text-center">
-        <div class="max-w-5xl mx-auto text-white">
+  <!-- HERO: FOCO NO MODELO "ATÉ O CINZA" -->
+    <!-- Ajustado com flex-col para garantir que o conteúdo caiba em telas pequenas -->
+    <section id="eps-foco" class="min-h-screen flex flex-col items-center justify-center bg-hero px-6 py-20 text-center relative">
+        <div class="max-w-5xl mx-auto text-white z-10">
             <span class="bg-blue-700/20 text-blue-400 px-4 py-1 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest mb-6 inline-block border border-blue-700/30">
                 Especialistas em Estrutura de Alta Performance
             </span>
-            <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[1] md:leading-[0.9] mb-8 uppercase italic">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[1] md:leading-[0.9] mb-6 uppercase italic">
                 Sua Obra <br><span class="text-blue-500">Até o Cinza</span>
             </h1>
-            <p class="max-w-3xl mx-auto text-sm md:text-lg text-slate-300 font-light leading-relaxed mb-10">
-                Focamos na entrega do <span class="text-white font-bold italic">núcleo tecnológico (EPS + Projeção)</span>. Entregamos a estrutura bruta com rigor técnico absoluto. <br class="hidden md:block">
+            <p class="max-w-3xl mx-auto text-sm md:text-lg text-slate-300 font-light leading-relaxed mb-10 px-2">
+                Focamos na entrega do **núcleo tecnológico (EPS + Projeção)**. Entregamos a estrutura bruta com rigor técnico absoluto. <br class="hidden md:block">
                 <span class="text-white font-bold italic">Precisa da obra completa?</span> Nós gerenciamos e terceirizamos todo o acabamento para você.
             </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://wa.me/5591985574096" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-full font-bold uppercase text-[10px] md:text-xs tracking-widest transition-all shadow-xl">
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/5591985574096" class="w-full md:w-auto bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-full font-bold uppercase text-[10px] md:text-xs tracking-widest transition-all shadow-xl">
                     Quero orçamento para fase cinza
                 </a>
-                <a href="#modelo-servico" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-full font-bold uppercase text-[10px] md:text-xs tracking-widest transition-all border border-white/20">
+                <a href="#modelo-servico" class="w-full md:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-full font-bold uppercase text-[10px] md:text-xs tracking-widest transition-all border border-white/20">
                     Entenda nosso modelo
                 </a>
             </div>
         </div>
     </section>
 
-<!-- SEÇÃO MODELO DE SERVIÇO -->
-    <section id="modelo-servico" class="py-12 bg-white border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 italic">
-                <div class="p-8 bg-slate-50 rounded-[2rem] border-l-4 border-blue-700">
-                    <h3 class="font-black uppercase text-blue-700 text-lg mb-2">01. Core Business: Até o Cinza</h3>
+    <!-- SEÇÃO MODELO DE SERVIÇO -->
+    <!-- Adicionado min-h-screen e flex-col para mobile -->
+    <section id="modelo-servico" class="min-h-screen md:min-h-[auto] flex flex-col justify-center py-16 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="text-center mb-10 md:hidden">
+                <h2 class="text-xl font-black uppercase italic tracking-tighter text-slate-900">Como <span class="text-blue-700">Trabalhamos</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 italic">
+                <!-- Modelo 01 -->
+                <div class="p-8 bg-slate-50 rounded-[2.5rem] border-l-4 border-blue-700 shadow-sm flex flex-col justify-center">
+                    <h3 class="font-black uppercase text-blue-700 text-lg md:text-xl mb-3">01. Core Business: Até o Cinza</h3>
                     <p class="text-[11px] md:text-xs text-slate-600 leading-relaxed uppercase font-bold tracking-tight">
                         Nossa expertise direta. Executamos desde o radier até o reboco térmico (shotcrete). Você recebe a estrutura pronta para receber o acabamento, com a garantia técnica VHF.
                     </p>
                 </div>
-                <div class="p-8 bg-slate-900 rounded-[2rem] text-white border-l-4 border-slate-500">
-                    <h3 class="font-black uppercase text-slate-400 text-lg mb-2">02. Gestão 360: Obra 100%</h3>
+                <!-- Modelo 02 -->
+                <div class="p-8 bg-slate-900 rounded-[2.5rem] text-white border-l-4 border-slate-500 shadow-xl flex flex-col justify-center">
+                    <h3 class="font-black uppercase text-slate-400 text-lg md:text-xl mb-3">02. Gestão 360: Obra 100%</h3>
                     <p class="text-[11px] md:text-xs text-slate-400 leading-relaxed uppercase font-bold tracking-tight">
                         Para quem busca conveniência. Gerenciamos fornecedores e terceirizamos as etapas de acabamento sob nossa supervisão, entregando a chave na mão.
                     </p>
@@ -195,41 +202,52 @@
     <section id="beneficios" class="py-16 md:py-24 bg-white px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter italic">Engenharia de <span class="text-blue-700">Performance</span></h2>
+                <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter italic text-slate-900">Engenharia de <span class="text-blue-700">Performance</span></h2>
+                <p class="text-[9px] text-slate-400 uppercase font-bold tracking-widest mt-2 md:hidden">Toque nos cards para ver detalhes</p>
             </div>
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden">
+                
+                <!-- Card 1 -->
+                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
                     <i class="fa-solid fa-leaf text-blue-700 text-2xl md:text-3xl mb-4"></i>
                     <h4 class="font-bold text-[11px] md:text-xs uppercase mb-2 italic">Sustentabilidade</h4>
                     <p class="text-[10px] md:text-[11px] text-slate-500">Redução de até 95% de entulho.</p>
-                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic">
+                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic opacity-0 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-[.active]:opacity-100 group-[.active]:translate-y-0">
                         Construção limpa: Sem desperdício de água e entulho.
                     </div>
                 </div>
-                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden">
+
+                <!-- Card 2 -->
+                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
                     <i class="fa-solid fa-temperature-arrow-down text-blue-700 text-2xl md:text-3xl mb-4"></i>
                     <h4 class="font-bold text-[11px] md:text-xs uppercase mb-2 italic">Conforto Térmico</h4>
                     <p class="text-[10px] md:text-[11px] text-slate-500">Ambientes equilibrados.</p>
-                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic">
+                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic opacity-0 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-[.active]:opacity-100 group-[.active]:translate-y-0">
                         Até 5°C mais fresco que a alvenaria comum.
                     </div>
                 </div>
-                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden">
+
+                <!-- Card 3 -->
+                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
                     <i class="fa-solid fa-stopwatch text-blue-700 text-2xl md:text-3xl mb-4"></i>
                     <h4 class="font-bold text-[11px] md:text-xs uppercase mb-2 italic">Alta Velocidade</h4>
                     <p class="text-[10px] md:text-[11px] text-slate-500">40% mais rápido.</p>
-                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic">
+                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic opacity-0 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-[.active]:opacity-100 group-[.active]:translate-y-0">
                         Menos tempo de canteiro e execução otimizada.
                     </div>
                 </div>
-                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden">
+
+                <!-- Card 4 -->
+                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
                     <i class="fa-solid fa-shield-halved text-blue-700 text-2xl md:text-3xl mb-4"></i>
                     <h4 class="font-bold text-[11px] md:text-xs uppercase mb-2 italic">Blindagem Monolítica</h4>
                     <p class="text-[10px] md:text-[11px] text-slate-500">Resistência extrema.</p>
-                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic">
+                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic opacity-0 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-[.active]:opacity-100 group-[.active]:translate-y-0">
                         Estrutura de aço e microconcreto de alta densidade.
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
