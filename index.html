@@ -13,7 +13,7 @@
         html { scroll-behavior: smooth; }
         
         .bg-hero { 
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85)), 
             url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1920'); 
             background-size: cover; background-position: center; 
         }
@@ -26,16 +26,23 @@
             transition: all 0.3s ease;
         }
 
-        /* Animação do Carrossel Infinito Suave */
+        /* Glassmorphism para o Card Informativo */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animação do Carrossel Infinito */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-320px * 20)); }
+            100% { transform: translateX(-50%); }
         }
 
         .carousel-track {
             display: flex;
-            width: calc(320px * 40);
-            animation: scroll 60s linear infinite; /* 60s para um movimento bem devagar e dinâmico */
+            width: max-content;
+            animation: scroll 80s linear infinite;
         }
 
         .carousel-track:hover { animation-play-state: paused; }
@@ -58,259 +65,236 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- NAVBAR -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 px-4 md:px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <span class="text-xl md:text-2xl font-black tracking-tighter text-slate-900 uppercase">VHF<span class="text-blue-700 font-light italic">Serviços</span></span>
             <div class="hidden md:flex gap-8 text-[10px] uppercase font-bold tracking-[0.2em] text-slate-500">
+                <a href="#modelo-servico" class="hover:text-blue-700">O que entregamos</a>
+                <a href="#cronograma" class="hover:text-blue-700">Etapas da Obra</a>
                 <a href="#beneficios" class="hover:text-blue-700">Vantagens</a>
-                <a href="#cronograma" class="hover:text-blue-700">Etapas</a>
-                <a href="#galeria" class="hover:text-blue-700">Entenda</a>
-                <a href="#indicador" class="hover:text-blue-700">Perfil</a>
+                <a href="#indicador" class="hover:text-blue-700">Simulador</a>
             </div>
-            <a href="https://wa.me/5591985574096" class="md:hidden bg-blue-700 text-white px-4 py-2 rounded-full text-[9px] font-bold uppercase tracking-widest">Contato</a>
+            <a href="https://wa.me/5591985574096" class="bg-blue-700 text-white px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">Contato</a>
         </div>
     </nav>
 
-  <!-- HERO: FOCO NO MODELO "ATÉ O CINZA" -->
-    <!-- Ajustado com flex-col para garantir que o conteúdo caiba em telas pequenas -->
-    <section id="eps-foco" class="min-h-screen flex flex-col items-center justify-center bg-hero px-6 py-20 text-center relative">
-        <div class="max-w-5xl mx-auto text-white z-10">
-            <span class="bg-blue-700/20 text-blue-400 px-4 py-1 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest mb-6 inline-block border border-blue-700/30">
-                Especialistas em Estrutura de Alta Performance
-            </span>
-            <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[1] md:leading-[0.9] mb-6 uppercase italic">
-                Sua Obra <br><span class="text-blue-500">Até o Cinza</span>
-            </h1>
-            <p class="max-w-3xl mx-auto text-sm md:text-lg text-slate-300 font-light leading-relaxed mb-10 px-2">
-                Focamos na entrega do <span class="text-white font-bold italic">núcleo tecnológico (EPS + Projeção)</span>. Entregamos a estrutura bruta com rigor técnico absoluto. <br class="hidden md:block">
-                <span class="text-white font-bold italic">Precisa da obra completa?</span> Nós gerenciamos e terceirizamos todo o acabamento para você.
-            </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <a href="https://wa.me/5591985574096" class="w-full md:w-auto bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-full font-bold uppercase text-[10px] md:text-xs tracking-widest transition-all shadow-xl">
-                    Quero orçamento para fase cinza
-                </a>
-                <a href="#modelo-servico" class="w-full md:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-full font-bold uppercase text-[10px] md:text-xs tracking-widest transition-all border border-white/20">
-                    Entenda nosso modelo
-                </a>
+    <!-- HERO SECTION: FOCO EM CONVERSÃO E ECONOMIA -->
+    <section class="min-h-screen bg-hero pt-24 pb-12 px-6 flex items-center">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Lado Esquerdo: O Convite/Dor do Cliente -->
+            <div class="lg:col-span-6 text-center lg:text-left text-white">
+                <span class="bg-blue-700/20 text-blue-400 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block border border-blue-700/30">
+                    Engenharia de Alto Impacto em Paragominas
+                </span>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-none mb-6 uppercase italic">
+                    CONSTRUA <br><span class="text-blue-500">RÁPIDO E BARATO</span>
+                </h1>
+                <p class="text-sm md:text-lg text-slate-300 font-light leading-relaxed mb-10 max-w-xl">
+                    Se você busca uma obra <span class="text-white font-bold italic">mais em conta, extremamente rápida e com desperdício zero</span>, a VHF Serviços entrega a tecnologia que o mercado convencional ignora. Reduza custos sem abrir mão do rigor técnico.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5591985574096" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest transition-all text-center shadow-2xl shadow-blue-900/20">
+                        Quero orçamento com economia
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lado Direito: O "Porquê VHF" (Dados e Comparativos) -->
+            <div class="lg:col-span-6 glass-card rounded-[2.5rem] p-8 md:p-10 text-white border-t-4 border-blue-600 relative">
+                <div class="mb-8">
+                    <h2 class="text-xl font-black uppercase italic mb-2 text-white">Por que contratar a <span class="text-blue-500">VHF?</span></h2>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Eficiência comprovada em cada etapa</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- Card Custo -->
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10 flex justify-between items-center">
+                        <div>
+                            <span class="text-[9px] font-bold text-blue-400 uppercase">Custo Estimado</span>
+                            <h4 class="text-lg font-black italic">ATÉ 20% ABAIXO DO MERCADO</h4>
+                        </div>
+                        <i class="fa-solid fa-chart-line text-blue-500 text-2xl opacity-50"></i>
+                    </div>
+
+                    <!-- Card Tempo -->
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10 flex justify-between items-center">
+                        <div>
+                            <span class="text-[9px] font-bold text-blue-400 uppercase">Velocidade de Entrega</span>
+                            <h4 class="text-lg font-black italic">40% MAIS RÁPIDA QUE TIJOLO</h4>
+                        </div>
+                        <i class="fa-solid fa-bolt-lightning text-blue-500 text-2xl opacity-50"></i>
+                    </div>
+
+                    <!-- Detalhamento EPS -->
+                    <div class="pt-4 border-t border-white/10">
+                        <p class="text-[11px] text-slate-400 leading-relaxed uppercase font-bold italic mb-4">
+                            O sistema em EPS substitui a alvenaria comum por painéis estruturais térmicos revestidos com aço e microconcreto.
+                        </p>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-blue-500 text-[10px]"></i>
+                                <span class="text-[10px] font-bold uppercase tracking-tight">Sua casa sempre fresca (Conforto Térmico)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-blue-500 text-[10px]"></i>
+                                <span class="text-[10px] font-bold uppercase tracking-tight">Resistência 3x superior ao método comum</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-blue-500 text-[10px]"></i>
+                                <span class="text-[10px] font-bold uppercase tracking-tight">Limpeza total: Redução de 95% de entulho</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-blue-700/10 p-4 rounded-xl border border-blue-500/20">
+                    <p class="text-[9px] text-center font-black italic uppercase text-blue-300">
+                        "Transformamos tecnologia em rentabilidade para o seu bolso."
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODELO DE SERVIÇO -->
+    <section id="modelo-servico" class="py-16 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 italic">
+                <div class="p-8 bg-slate-50 rounded-[2.5rem] border-l-4 border-blue-700 shadow-sm">
+                    <h3 class="font-black uppercase text-blue-700 text-lg mb-3">01. Core Business: Até o Cinza</h3>
+                    <p class="text-[11px] text-slate-600 leading-relaxed uppercase font-bold tracking-tight">
+                        Executamos o núcleo tecnológico: do radier ao reboco estrutural (shotcrete). Estrutura pronta para o acabamento com garantia técnica.
+                    </p>
+                </div>
+                <div class="p-8 bg-slate-900 rounded-[2.5rem] text-white border-l-4 border-slate-500 shadow-xl">
+                    <h3 class="font-black uppercase text-slate-400 text-lg mb-3">02. Gestão 360: Obra 100%</h3>
+                    <p class="text-[11px] text-slate-400 leading-relaxed uppercase font-bold tracking-tight">
+                        Gerenciamos fornecedores e terceirizamos as etapas de acabamento sob nossa supervisão rigorosa. Entregamos a chave na mão.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO MODELO DE SERVIÇO -->
-    <!-- Adicionado min-h-screen e flex-col para mobile -->
-    <section id="modelo-servico" class="min-h-screen md:min-h-[auto] flex flex-col justify-center py-16 bg-white border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 w-full">
-            <div class="text-center mb-10 md:hidden">
-                <h2 class="text-xl font-black uppercase italic tracking-tighter text-slate-900">Como <span class="text-blue-700">Trabalhamos</span></h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 italic">
-                <!-- Modelo 01 -->
-                <div class="p-8 bg-slate-50 rounded-[2.5rem] border-l-4 border-blue-700 shadow-sm flex flex-col justify-center">
-                    <h3 class="font-black uppercase text-blue-700 text-lg md:text-xl mb-3">01. Core Business: Até o Cinza</h3>
-                    <p class="text-[11px] md:text-xs text-slate-600 leading-relaxed uppercase font-bold tracking-tight">
-                        Nossa expertise direta. Executamos desde o radier até o reboco térmico (shotcrete). Você recebe a estrutura pronta para receber o acabamento, com a garantia técnica VHF.
-                    </p>
-                </div>
-                <!-- Modelo 02 -->
-                <div class="p-8 bg-slate-900 rounded-[2.5rem] text-white border-l-4 border-slate-500 shadow-xl flex flex-col justify-center">
-                    <h3 class="font-black uppercase text-slate-400 text-lg md:text-xl mb-3">02. Gestão 360: Obra 100%</h3>
-                    <p class="text-[11px] md:text-xs text-slate-400 leading-relaxed uppercase font-bold tracking-tight">
-                        Para quem busca conveniência. Gerenciamos fornecedores e terceirizamos as etapas de acabamento sob nossa supervisão, entregando a chave na mão.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- CRONOGRAMA DINÂMICO -->
     <section id="cronograma" class="py-16 md:py-24 bg-slate-50 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 mb-12 text-center">
-            <h2 class="text-2xl md:text-4xl font-black uppercase italic tracking-tighter">Roteiro de <span class="text-blue-700">Construção</span></h2>
-            <p class="text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mt-4">Passo a passo da tecnologia monolítica</p>
+            <h2 class="text-2xl md:text-4xl font-black uppercase italic tracking-tighter text-slate-900">Roteiro de <span class="text-blue-700">Construção</span></h2>
+            <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] mt-4">A evolução da sua obra passo a passo</p>
         </div>
 
         <div class="carousel-container relative">
             <div class="carousel-track" id="track-etapas">
-                </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-6 mt-16 grid grid-cols-2 md:grid-cols-6 gap-4">
-            <div class="text-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                <i class="fa-solid fa-fire-extinguisher text-blue-700 mb-2"></i>
-                <p class="text-[8px] font-black uppercase">Conforto Térmico</p>
-            </div>
-            <div class="text-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                <i class="fa-solid fa-volume-xmark text-blue-700 mb-2"></i>
-                <p class="text-[8px] font-black uppercase">Isolamento Acústico</p>
-            </div>
-            <div class="text-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                <i class="fa-solid fa-bolt text-blue-700 mb-2"></i>
-                <p class="text-[8px] font-black uppercase">70% mais rápida</p>
-            </div>
-            <div class="text-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                <i class="fa-solid fa-shield-virus text-blue-700 mb-2"></i>
-                <p class="text-[8px] font-black uppercase">Alta Resistência</p>
-            </div>
-            <div class="text-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                <i class="fa-solid fa-recycle text-blue-700 mb-2"></i>
-                <p class="text-[8px] font-black uppercase">Sem Desperdícios</p>
-            </div>
-            <div class="text-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                <i class="fa-solid fa-hand-holding-dollar text-blue-700 mb-2"></i>
-                <p class="text-[8px] font-black uppercase">Custo-Benefício</p>
+                <!-- Inserido via JS -->
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO DE RIGOR TÉCNICO (Substituindo o Vídeo) -->
-<section id="galeria" class="py-16 md:py-24 bg-white px-4 md:px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row items-center bg-slate-900 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl min-h-[400px]">
-            
-            <!-- Lado Esquerdo: Título -->
-            <div class="flex-1 p-8 md:p-12 text-center lg:text-left">
-                <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-none text-white">
-                    Rigor & <br><span class="text-blue-500">Engenharia</span>
-                </h2>
-                <p class="text-slate-500 mt-6 font-light uppercase tracking-widest text-[10px] md:text-[12px]">
-                    A ciência por trás do sistema monolítico
-                </p>
-            </div>
-
-            <!-- Lado Direito: Frase de Impacto / Informação -->
-            <div class="flex-1 w-full p-8 md:p-12 bg-slate-800/50 border-l border-white/5 flex flex-col justify-center">
-                <div class="border-l-4 border-blue-600 pl-6">
-                    <blockquote class="text-xl md:text-2xl text-slate-200 font-light italic leading-relaxed">
-                        "O sistema em EPS não é apenas uma escolha construtiva rápida; é uma <span class="text-white font-bold italic">solução de alta performance térmica e estrutural</span> que substitui o improviso pela precisão matemática."
-                    </blockquote>
-                    <div class="mt-8 flex gap-6">
-                        <div>
-                            <p class="text-blue-500 font-black text-2xl tracking-tighter">100%</p>
-                            <p class="text-white text-[8px] uppercase font-bold tracking-widest">Normatizado</p>
-                        </div>
-                        <div class="border-l border-white/10 pl-6">
-                            <p class="text-blue-500 font-black text-2xl tracking-tighter">ZERO</p>
-                            <p class="text-white text-[8px] uppercase font-bold tracking-widest">Achismos</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
+    <!-- BENEFÍCIOS -->
     <section id="beneficios" class="py-16 md:py-24 bg-white px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter italic text-slate-900">Engenharia de <span class="text-blue-700">Performance</span></h2>
-                <p class="text-[9px] text-slate-400 uppercase font-bold tracking-widest mt-2 md:hidden">Toque nos cards para ver detalhes</p>
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-black uppercase tracking-tighter italic text-slate-900">O que você ganha com o <span class="text-blue-700">EPS?</span></h2>
             </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                
-                <!-- Card 1 -->
-                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
-                    <i class="fa-solid fa-leaf text-blue-700 text-2xl md:text-3xl mb-4"></i>
-                    <h4 class="font-bold text-[11px] md:text-xs uppercase mb-2 italic">Sustentabilidade</h4>
-                    <p class="text-[10px] md:text-[11px] text-slate-500">Redução de até 95% de entulho.</p>
-                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic opacity-0 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-[.active]:opacity-100 group-[.active]:translate-y-0">
-                        Construção limpa: Sem desperdício de água e entulho.
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="benefit-card p-8 bg-slate-50 rounded-3xl border border-slate-100 relative h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                    <i class="fa-solid fa-leaf text-blue-700 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-xs uppercase mb-2 italic text-slate-800">Sustentabilidade</h4>
+                    <p class="text-[11px] text-slate-500">95% menos entulho no canteiro.</p>
+                    <div class="hover-info absolute inset-0 p-8 flex items-center bg-blue-700 text-white text-[11px] font-bold uppercase italic">
+                        Canteiro limpo, sem desperdício de materiais e água.
                     </div>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
-                    <i class="fa-solid fa-temperature-arrow-down text-blue-700 text-2xl md:text-3xl mb-4"></i>
-                    <h4 class="font-bold text-[11px] md:text-xs uppercase mb-2 italic">Conforto Térmico</h4>
-                    <p class="text-[10px] md:text-[11px] text-slate-500">Ambientes equilibrados.</p>
-                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic opacity-0 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-[.active]:opacity-100 group-[.active]:translate-y-0">
-                        Até 5°C mais fresco que a alvenaria comum.
+                <div class="benefit-card p-8 bg-slate-50 rounded-3xl border border-slate-100 relative h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                    <i class="fa-solid fa-snowflake text-blue-700 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-xs uppercase mb-2 italic text-slate-800">Conforto Térmico</h4>
+                    <p class="text-[11px] text-slate-500">Sua casa fresca o ano todo.</p>
+                    <div class="hover-info absolute inset-0 p-8 flex items-center bg-blue-700 text-white text-[11px] font-bold uppercase italic">
+                        Redução drástica no uso de ar-condicionado.
                     </div>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
-                    <i class="fa-solid fa-stopwatch text-blue-700 text-2xl md:text-3xl mb-4"></i>
-                    <h4 class="font-bold text-[11px] md:text-xs uppercase mb-2 italic">Alta Velocidade</h4>
-                    <p class="text-[10px] md:text-[11px] text-slate-500">40% mais rápido.</p>
-                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic opacity-0 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-[.active]:opacity-100 group-[.active]:translate-y-0">
-                        Menos tempo de canteiro e execução otimizada.
+                <div class="benefit-card p-8 bg-slate-50 rounded-3xl border border-slate-100 relative h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                    <i class="fa-solid fa-clock text-blue-700 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-xs uppercase mb-2 italic text-slate-800">Velocidade</h4>
+                    <p class="text-[11px] text-slate-500">40% menos tempo de obra.</p>
+                    <div class="hover-info absolute inset-0 p-8 flex items-center bg-blue-700 text-white text-[11px] font-bold uppercase italic">
+                        Montagem industrializada que antecipa sua mudança.
                     </div>
                 </div>
-
-                <!-- Card 4 -->
-                <div class="benefit-card p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-100 relative group h-48 md:h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
-                    <i class="fa-solid fa-shield-halved text-blue-700 text-2xl md:text-3xl mb-4"></i>
-                    <h4 class="font-bold text-[11px] md:text-xs uppercase mb-2 italic">Blindagem Monolítica</h4>
-                    <p class="text-[10px] md:text-[11px] text-slate-500">Resistência extrema.</p>
-                    <div class="hover-info absolute inset-0 p-6 md:p-8 flex items-center bg-blue-700 text-white text-[10px] md:text-[11px] font-bold uppercase italic opacity-0 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-[.active]:opacity-100 group-[.active]:translate-y-0">
-                        Estrutura de aço e microconcreto de alta densidade.
+                <div class="benefit-card p-8 bg-slate-50 rounded-3xl border border-slate-100 relative h-64 flex flex-col justify-center overflow-hidden cursor-pointer" onclick="this.classList.toggle('active')">
+                    <i class="fa-solid fa-shield-halved text-blue-700 text-3xl mb-4"></i>
+                    <h4 class="font-bold text-xs uppercase mb-2 italic text-slate-800">Segurança</h4>
+                    <p class="text-[11px] text-slate-500">Estrutura Monolítica.</p>
+                    <div class="hover-info absolute inset-0 p-8 flex items-center bg-blue-700 text-white text-[11px] font-bold uppercase italic">
+                        Paredes impossíveis de quebrar e resistentes ao fogo.
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <!-- SIMULADOR DE PERFIL -->
     <section id="indicador" class="py-16 md:py-24 bg-slate-50 px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-2xl md:text-3xl font-black uppercase mb-10 md:mb-12 italic tracking-tighter">Qual seu <span class="text-blue-700">Perfil?</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-12">
-                <button id="btn-cinza" onclick="vote('cinza')" class="p-6 md:p-8 bg-white rounded-[2rem] shadow-sm text-left border-2 border-transparent transition-all">
-                    <h4 class="font-black uppercase italic text-sm md:text-base">Até o Cinza</h4>
-                    <p class="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-tighter italic">Tecnologia e economia</p>
+            <h2 class="text-2xl md:text-3xl font-black uppercase mb-12 italic tracking-tighter text-slate-900">Qual sua <span class="text-blue-700">Prioridade?</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <button id="btn-cinza" onclick="vote('cinza')" class="p-8 bg-white rounded-[2.5rem] shadow-sm text-left border-2 border-transparent transition-all">
+                    <h4 class="font-black uppercase italic text-base">Economia & Tecnologia</h4>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tight italic">Foco na fase cinza (até o reboco)</p>
                 </button>
-                <button id="btn-completa" onclick="vote('completa')" class="p-6 md:p-8 bg-white rounded-[2rem] shadow-sm text-left border-2 border-transparent transition-all">
-                    <h4 class="font-black uppercase italic text-sm md:text-base">Obra 100%</h4>
-                    <p class="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-tighter italic">Tranquilidade total</p>
+                <button id="btn-completa" onclick="vote('completa')" class="p-8 bg-white rounded-[2.5rem] shadow-sm text-left border-2 border-transparent transition-all">
+                    <h4 class="font-black uppercase italic text-base">Chave na Mão</h4>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tight italic">Obra 100% pronta e gerenciada</p>
                 </button>
             </div>
-            <div class="bg-slate-200 h-10 md:h-14 rounded-full overflow-hidden relative shadow-inner">
-                <div id="bar-cinza" class="progress-bar absolute left-0 top-0 h-full bg-blue-700 flex items-center justify-center text-[8px] md:text-[10px] text-white font-bold uppercase" style="width: 50%;">Cinza (<span id="perc-cinza">50</span>%)</div>
-                <div id="bar-completa" class="progress-bar absolute right-0 top-0 h-full bg-slate-800 flex items-center justify-center text-[8px] md:text-[10px] text-white font-bold uppercase" style="width: 50%;">100% (<span id="perc-completa">50</span>%)</div>
+            <div class="bg-slate-200 h-14 rounded-full overflow-hidden relative shadow-inner">
+                <div id="bar-cinza" class="progress-bar absolute left-0 top-0 h-full bg-blue-700 flex items-center justify-center text-[10px] text-white font-bold uppercase" style="width: 50%;">Cinza (<span id="perc-cinza">50</span>%)</div>
+                <div id="bar-completa" class="progress-bar absolute right-0 top-0 h-full bg-slate-800 flex items-center justify-center text-[10px] text-white font-bold uppercase" style="width: 50%;">100% (<span id="perc-completa">50</span>%)</div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 md:py-20 bg-slate-900 text-white px-6">
-        <div class="max-w-7xl mx-auto border-b border-white/10 pb-12 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+    <!-- FOOTER -->
+    <footer class="py-20 bg-slate-900 text-white px-6">
+        <div class="max-w-7xl mx-auto border-b border-white/10 pb-12 flex flex-col md:flex-row justify-between items-center gap-8">
             <span class="text-2xl md:text-3xl font-black uppercase italic">VHF<span class="text-blue-700">Serviços</span></span>
-            <p class="text-slate-500 text-[9px] md:text-[10px] uppercase font-bold tracking-[0.3em]">Paragominas - PA | +55 (91) 98557-4096</p>
+            <p class="text-slate-500 text-[10px] uppercase font-bold tracking-[0.3em] text-center">Paragominas - PA | +55 (91) 98557-4096</p>
         </div>
-        <div class="pt-8 text-center text-[8px] md:text-[9px] text-slate-500 uppercase tracking-widest font-bold">
-            &copy; 2026 VHF Serviços - Rigor Técnico sem Achismos.
+        <div class="pt-8 text-center text-[9px] text-slate-500 uppercase tracking-widest font-bold">
+            &copy; 2026 VHF Serviços - Engenharia de Performance Monolítica.
         </div>
     </footer>
 
     <script>
-        // LISTA DE ETAPAS - SUBSTITUA "COLE_O_LINK_AQUI" PELOS LINKS DAS FOTOS
         const etapas = [
             {n: "01", t: "Terraplanagem", d: "Execução da terraplanagem e compactação do solo.", img: "https://i.postimg.cc/FzPmTYk0/etapa-01.jpg"},
             {n: "02", t: "Armação do Radier", d: "Lona plástica e montagem da malha de aço estrutural.", img: "https://i.postimg.cc/0jtxVzKW/etapa-02.jpg"},
             {n: "03", t: "Concretagem", d: "Lançamento e nivelamento do concreto do radier.", img: "https://i.postimg.cc/90xVLDwL/etapa-03.jpg"},
             {n: "04", t: "Radier Pronto", d: "Base estrutural finalizada para receber as paredes.", img: "https://i.postimg.cc/d3Wv5hZ4/etapa-04.jpg"},
             {n: "05", t: "Início das Paredes EPS", d: "Montagem dos painéis estruturais sobre o radier.", img: "https://i.postimg.cc/rshcfDRh/etapa-05.jpg"},
-            {n: "06", t: "Amarração / Estruturação", d: "Fixação das telas metálicas entre os painéis.", img: "https://i.postimg.cc/tTTpGm4V/remove-texto-	    que-esta-localizado-202605010938.jpg"},
-            {n: "07", t: "Instalações nas Paredes", d: "Elétrica e hidráulica dentro dos painéis EPS.", img: "https://i.postimg.cc/MZtW6F3S/etapa-07.jpg"},
+            {n: "06", t: "Amarração", d: "Fixação das telas metálicas entre os painéis.", img: "https://i.postimg.cc/tTTpGm4V/etapa-06.jpg"},
+            {n: "07", t: "Instalações", d: "Elétrica e hidráulica dentro dos painéis EPS.", img: "https://i.postimg.cc/MZtW6F3S/etapa-07.jpg"},
             {n: "08", t: "Fechamento", d: "Conclusão da montagem das paredes estruturais.", img: "https://i.postimg.cc/WpS2NHYT/etapa-08.jpg"},
             {n: "09", t: "Projeção (Shotcrete)", d: "Aplicação da argamassa estrutural para rigidez.", img: "https://i.postimg.cc/KcQZGHpm/etapa-09.jpg"},
             {n: "10", t: "Paredes Rebocadas", d: "Regularização pronta para acabamento.", img: "https://i.postimg.cc/L4vH9bQ6/etapa-10.jpg"},
-	    {n: "11", t: "Contrapiso", d: "Execução do contrapiso em todos os ambientes.", img: "https://i.postimg.cc/7PXxHWtC/etapa-11.jpg"},
+            {n: "11", t: "Contrapiso", d: "Execução do contrapiso em todos os ambientes.", img: "https://i.postimg.cc/7PXxHWtC/etapa-11.jpg"},
             {n: "12", t: "Cobertura / Laje", d: "Execução da laje e estrutura de cobertura.", img: "https://i.postimg.cc/PfKtXRV1/etapa-12.jpg"},
             {n: "13", t: "Concretagem da Laje", d: "Lançamento do concreto sobre a laje.", img: "https://i.postimg.cc/WpS2NHYM/etapa-13.jpg"},
-            {n: "14", t: "Impermeabilização da Laje", d: "Aplicação de manta impermeabilizante na laje.", img: "https://i.postimg.cc/9X1WmngT/etapa-14.jpg"},
+            {n: "14", t: "Impermeabilização", d: "Aplicação de manta impermeabilizante na laje.", img: "https://i.postimg.cc/9X1WmngT/etapa-14.jpg"},
             {n: "15", t: "Revestimento", d: "Assentamento dos revestimentos em pisos e paredes.", img: "https://i.postimg.cc/PrxdPQ0p/etapa-15.jpg"},
-            {n: "16", t: "Pintura Interna", d: "Aplicação de massa corrida e pintura nas paredes internas.", img: "https://i.postimg.cc/kX47BvLR/etapa-16.jpg"},
+            {n: "16", t: "Pintura Interna", d: "Aplicação de massa corrida e pintura interna.", img: "https://i.postimg.cc/kX47BvLR/etapa-16.jpg"},
             {n: "17", t: "Acabamento Externo", d: "Fachada, pintura externa e calçadas.", img: "https://i.postimg.cc/kX47BvL8/etapa-17.jpg"},
             {n: "18", t: "Detalhes Finais", d: "Iluminação, paisagismo e ajustes finos.", img: "https://i.postimg.cc/5N0f6SDS/etapa-18.jpg"}
-            
         ];
 
         const renderEtapas = (arr) => {
             return arr.map(e => `
                 <div class="step-card bg-white p-6 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col group">
-                    <div class="h-48 w-full rounded-[2rem] overflow-hidden mb-6 bg-slate-100 flex items-center justify-center">
-                        <img src="${e.img}" alt="${e.t}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'text-[10px] font-bold text-slate-400 italic\'>Foto a ser adicionada</span>'">
+                    <div class="h-48 w-full rounded-[2rem] overflow-hidden mb-6 bg-slate-100">
+                        <img src="${e.img}" alt="${e.t}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300?text=VHF+Serviços'">
                     </div>
                     <div class="flex items-center gap-4 mb-4">
                         <span class="text-3xl font-black text-blue-700 italic opacity-30">${e.n}</span>
@@ -324,8 +308,7 @@
         const track = document.getElementById('track-etapas');
         track.innerHTML = renderEtapas(etapas) + renderEtapas(etapas);
 
-        // Votos Perfil
-        let votes = { cinza: 10, completa: 10 };
+        let votes = { cinza: 12, completa: 8 };
         function vote(type) {
             votes[type]++;
             const total = votes.cinza + votes.completa;
@@ -335,6 +318,7 @@
             document.getElementById('bar-completa').style.width = pF + '%';
             document.getElementById('perc-cinza').innerText = pC;
             document.getElementById('perc-completa').innerText = pF;
+            
             const bC = document.getElementById('btn-cinza');
             const bF = document.getElementById('btn-completa');
             if(pC > pF) { bC.classList.add('winner-border'); bF.classList.remove('winner-border'); }
